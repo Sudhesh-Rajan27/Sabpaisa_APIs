@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 33% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 217 100% 50%;  /* SabPaisa blue */
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 36 100% 50%; /* SabPaisa orange */
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 82%;
+    --input: 220 13% 82%;
+    --ring: 222 68% 47%;
+
+    --radius: 0.5rem;
+
+    /* SabPaisa Colors - Updated sidebar to white */
+    --sidebar-background: 0 0% 100%; /* Changed to white */
+    --sidebar-foreground: 222.2 84% 4.9%; /* Dark text for contrast on white */
+    --sidebar-accent: 210 40% 96.1%;
+    --sidebar-accent-foreground: 222.2 47.4% 11.2%;
+    --sidebar-border: 220 13% 90%;
+    --sidebar-ring: 222.2 84% 4.9% / 0.1;
+    --sidebar-primary: 36 100% 50%; /* SabPaisa orange */
+    --sidebar-primary-foreground: 0 0% 0%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217 100% 50%;  /* SabPaisa blue */
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 36 100% 50%; /* SabPaisa orange */
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-brand-background text-brand-text font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+}
+
+/* Brand color utility classes */
+.bg-brand-blue {
+  background-color: #0075FF; /* SabPaisa logo blue */
+}
+
+.hover\:bg-brand-blue-light:hover {
+  background-color: #2089FF; /* Lighter SabPaisa blue for hover */
+}
+
+.text-brand-blue {
+  color: #0075FF; /* SabPaisa logo blue */
+}
+
+.bg-brand-orange {
+  background-color: #FF9900; /* SabPaisa logo orange */
+}
+
+.hover\:bg-brand-orange-light:hover {
+  background-color: #FFAD33; /* Lighter SabPaisa orange for hover */
+}
+
+.text-brand-orange {
+  color: #FF9900; /* SabPaisa logo orange */
+}
+
+.bg-brand-background {
+  background-color: #F5F7FA;
+}
+
+.text-brand-text {
+  color: #333333;
+}
+
+.border-brand-border {
+  border-color: #D1D5DB;
+}
+
+/* Animation classes */
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Progress indicator styles */
+.Progress-indicator.bg-brand-blue {
+  background-color: #0075FF; /* SabPaisa logo blue */
+}
+
+.Progress-indicator.bg-brand-orange {
+  background-color: #FF9900; /* SabPaisa logo orange */
+}
+
+/* Table styling */
+.table-striped tbody tr:nth-child(even) {
+  @apply bg-gray-50;
+}
+
+.table-hover tbody tr:hover {
+  @apply bg-gray-100 transition-colors;
+}
+
+/* Card styling */
+.card-hover {
+  @apply transition-all duration-200 hover:shadow-md;
+}
+
+/* Custom button styling */
+.btn-brand-primary {
+  @apply bg-brand-blue text-white hover:bg-brand-blue-light transition-colors;
+}
+
+.btn-brand-secondary {
+  @apply bg-brand-orange text-white hover:bg-brand-orange-light transition-colors;
+}
+
+.btn-outline {
+  @apply border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 transition-colors;
+}
