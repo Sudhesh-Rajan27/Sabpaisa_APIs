@@ -12,7 +12,9 @@ import torch.nn.functional as F
 import torch_geometric
 from torch_geometric.nn import GCNConv
 from torch_geometric.data import Data
+import os
 
+MODEL_PATH = os.path.join(os.path.dirname(__file__),"../Models/gnn_fraud_model.pt")
 app = FastAPI()
 
 # ✅ Define GNNFraudModel (Same as in Training Script)
@@ -37,11 +39,12 @@ class GNNFraudModel(nn.Module):
 # ✅ Load the trained GNN model
 input_dim = 5  # Ensure this matches the model's input feature count
 model = GNNFraudModel(input_dim, hidden_dim=8, output_dim=1)
-model.load_state_dict(torch.load("gnn_fraud_model.pt"))
+model.load_state_dict(torch.load(MODEL_PATH, map_location=torch.device("cpu")))
 model.eval()
 
 # ✅ Load the StandardScaler for input normalization
-scaler = joblib.load("scaler.pkl")
+SCALER_PATH = os.path.join(os.path.dirname(__file__),"../Models/scaler.pkl")
+scaler = joblib.load(SCALER_PATH)
 
 # ✅ Define the Transaction Schema
 class Transaction(BaseModel):
