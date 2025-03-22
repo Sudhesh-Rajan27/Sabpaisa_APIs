@@ -17,8 +17,7 @@ DB_NAME = os.getenv("DB_NAME")
 encoded_password = urllib.parse.quote_plus(DB_PASSWORD)
 
 # ✅ MySQL Database Configuration
-DATABASE_URL = f"mysql+pymysql://{DB_USER}:{encoded_password}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
-
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://database_0x8n_user:UL2UuxdWDNKNodXT5rr5bURpALnZWE4J@dpg-cvffke5ds78s73flab60-a/database_0x8n")
 # ✅ Create Engine & Session
 engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
