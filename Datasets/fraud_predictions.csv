@@ -1,0 +1,5 @@
+transaction_id,is_fraud,fraud_source,fraud_reason,fraud_score
+TXN1001,False,model,No suspicious activity detected,0.0
+TXN1002,False,model,No suspicious activity detected,0.0
+TXN1003,False,model,No suspicious activity detected,0.0
+TXN1004,False,model,No suspicious activity detected,0.0

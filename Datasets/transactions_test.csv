@@ -1,0 +1,5 @@
+transaction_id,transaction_amount,transaction_mode,payer_id,payee_id,payee_ip,is_fraud
+TXN1001,5000,Credit Card,PAYER123,PAYEE456,192.168.1.10,0
+TXN1002,25000,Debit Card,PAYER456,PAYEE789,192.168.2.20,1
+TXN1003,1500,Net Banking,PAYER789,PAYEE123,10.10.10.10,0
+TXN1004,99999,UPI,PAYER321,PAYEE654,200.100.50.25,1
